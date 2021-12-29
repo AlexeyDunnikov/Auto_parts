@@ -27,20 +27,41 @@
         </nav>
       </header>
       <main class="main">
-        <div class="catalog__item">
-          <h3 class="catalog__item-title">
-            Запчасть
-          </h3>
-          <p class="catalog__item-articul">
-            Артикул: <span class="catalog__item-articul__value"></span>
-          </p>
-          <p class="catalog__item-price">
-            Цена: <span class="catalog__item-price__value"></span>
-          </p>
-          <p class="catalog__item-other">
-            Другая информация: <span class="catalog__item-other__value"></span>
-          </p>
-          <button class="catalog__item-btn">Купить</button>
+        <div class="container">
+          <h1 class="main-title">Добавить поставщика</h1>
+          <div class="row">
+            <form class="col s12 add__form">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input
+                    id="producer"
+                    name="producer"
+                    type="text"
+                    class="validate"
+                  />
+                  <label for="producer">Поставщик</label>
+                </div>
+                <div class="input-field col s6">
+                  <input
+                    id="address"
+                    name="address"
+                    type="text"
+                    class="validate"
+                  />
+                  <label for="address">Адрес</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="phone" name="phone" type="text" class="validate" />
+                  <label for="phone">Телефон</label>
+                </div>
+              </div>
+
+              <button class="btn add__btn">Добавить</button>
+            </form>
+          </div>
         </div>
       </main>
       <footer class="footer"></footer>
