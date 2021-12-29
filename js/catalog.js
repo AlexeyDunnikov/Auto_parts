@@ -1,14 +1,15 @@
+import { cart } from "./state.js";
+
 export function showCatalog(state) {
   const itemTmp = document.querySelector("#catalog__item-tmp");
   const catalog = document.querySelector(".catalog");
 
   state.forEach((item) => {
-    console.log(item);
-
     const producer = item.producer;
     const details = item.details;
 
-    details.forEach((detail) => {
+    details.forEach((d) => {
+      const detail = d;
       const itemCloned = itemTmp.content.cloneNode(true);
 
       //Name
@@ -30,6 +31,13 @@ export function showCatalog(state) {
       //producer
       itemCloned.querySelector(".catalog__item-producer__value").textContent =
         producer.getName();
+
+      //button buy
+      itemCloned
+        .querySelector(".catalog__item-btn")
+        .addEventListener("click", (evt) => {
+          cart.push(detail);
+        });
 
       catalog.append(itemCloned);
     });

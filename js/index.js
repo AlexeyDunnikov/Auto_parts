@@ -2,21 +2,28 @@ import { Producer } from "./producer.js";
 import { Detail } from "./detail.js";
 import { Order } from "./order.js";
 import { state } from "./state.js";
-import { showCatalog } from "./catalog.js";
+import { initialNavbar } from "./navbar.js";
 
-showCatalog(state);
+const navbar = document.querySelector(".tabs");
+const instance = M.Tabs.init(navbar, {});
 
-// const addForm = document.querySelector(".add__form");
-// addForm.addEventListener("submit", (evt) => {
-//   evt.preventDefault();
-//   const target = evt.target;
+initialNavbar();
 
-//   const producerName = target.producer.value;
-//   const producerAddress = target.address.value;
-//   const producerPhone = target.phone.value;
+const addForm = document.querySelector(".add__form");
+addForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  const target = evt.target;
 
-//   const producer = new Producer(producerName, producerAddress, producerPhone);
-//   state.push(producer);
+  const producerName = target.producer.value;
+  const producerAddress = target.address.value;
+  const producerPhone = target.phone.value;
 
-//   console.log(state);
-// });
+  const producer = new Producer(producerName, producerAddress, producerPhone);
+  const obj = {
+    producer,
+  };
+
+  state.push(obj);
+
+  console.log(state);
+});

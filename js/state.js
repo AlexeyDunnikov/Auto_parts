@@ -22,3 +22,5 @@ export const state = [
     details: [detail2, detail3],
   },
 ];
+
+export const cart = [];

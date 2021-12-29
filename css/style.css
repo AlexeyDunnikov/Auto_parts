@@ -1,6 +1,12 @@
 @import url("./reset.css");
 @import url("./global.css");
 
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .main-title {
   margin: 50px 0;
 }
