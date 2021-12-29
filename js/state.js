@@ -1,5 +1,6 @@
-import { Producer } from "./producer.js";
-import { Detail } from "./detail.js";
+import { Producer } from "./classes/producer.js";
+import { Detail } from "./classes/detail.js";
+import { Order } from "./classes/order.js";
 
 const producer1 = new Producer(
   "Patron",
@@ -16,6 +17,9 @@ const detail1 = new Detail("Подшипник", "16581212", 29, "Польша")
 const detail2 = new Detail("Пружина", "16815130", 45, "Чехия");
 const detail3 = new Detail("Шаровая опора", "89210015", 34, "Нидерланды");
 
+const order1 = new Order(producer1, detail1, 3);
+const order2 = new Order(producer2, detail3, 2);
+
 export const state = {
   items: [
     {
@@ -27,16 +31,5 @@ export const state = {
       details: [detail2, detail3],
     },
   ],
-  cart: [
-    {
-      producer: producer1,
-      detail: detail1,
-      amount: 2,
-    },
-    {
-      producer: producer2,
-      detail: detail3,
-      amount: 4,
-    },
-  ],
+  cart: [order1, order2]   
 };

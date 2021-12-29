@@ -1,3 +1,5 @@
+import { Order } from "./classes/order.js";
+
 export function renderCatalog(state) {
   const itemTmp = document.querySelector("#catalog__item-tmp");
   const catalog = document.querySelector(".catalog");
@@ -38,21 +40,16 @@ export function renderCatalog(state) {
           let find = false;
           for (let i = 0; i < state.cart.length; i++) {
             if (
-              state.cart[i].detail.getVendorCode() === detail.getVendorCode()
+              state.cart[i].getDetail().getVendorCode() === detail.getVendorCode() && state.cart[i].getProducer().getName() === producer.getName()
             ) {
-              state.cart[i].amount += 1;
+              state.cart[i].addCount();
               find = true;
               break;
             }
           }
 
           if (!find) {
-            const obj = {
-              producer,
-              detail,
-              amount: 1,
-            };
-            state.cart.push(obj);
+            state.cart.push(new Order(producer, detail));
           }
         });
 

@@ -1,6 +1,6 @@
-import { Producer } from "./producer.js";
-import { Detail } from "./detail.js";
-import { Order } from "./order.js";
+import { Producer } from "./classes/producer.js";
+import { Detail } from "./classes/detail.js";
+import { Order } from "./classes/order.js";
 import { state } from "./state.js";
 import { initialNavbar } from "./navbar.js";
 
