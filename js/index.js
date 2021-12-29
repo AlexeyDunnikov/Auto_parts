@@ -1,31 +1,22 @@
 import { Producer } from "./producer.js";
 import { Detail } from "./detail.js";
 import { Order } from "./order.js";
+import { state } from "./state.js";
+import { showCatalog } from "./catalog.js";
 
-const producer1 = new Producer(
-  "Patron",
-  "г.Минск, ул.Куйбышева 37",
-  "+375(29)268-45-24"
-);
+showCatalog(state);
 
-const detail1 = new Detail("Подшипник", '16581212', '29', "Польша");
-const detail2 = new Detail('Пружина', "16815130", '45', 'Чехия');
+// const addForm = document.querySelector(".add__form");
+// addForm.addEventListener("submit", (evt) => {
+//   evt.preventDefault();
+//   const target = evt.target;
 
-const state = {
-  producer1: [detail1, detail2],
-};
+//   const producerName = target.producer.value;
+//   const producerAddress = target.address.value;
+//   const producerPhone = target.phone.value;
 
-const addForm = document.querySelector(".add__form");
-addForm.addEventListener("submit", (evt) => {
-  evt.preventDefault();
-  const target = evt.target;
+//   const producer = new Producer(producerName, producerAddress, producerPhone);
+//   state.push(producer);
 
-  const producerName = target.producer.value;
-  const producerAddress = target.address.value;
-  const producerPhone = target.phone.value;
-
-  const producer = new Producer(producerName, producerAddress, producerPhone);
-  state.push(producer);
-
-  console.log(state);
-});
+//   console.log(state);
+// });

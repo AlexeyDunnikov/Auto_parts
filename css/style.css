@@ -1,6 +1,29 @@
-@import url('./reset.css');
-@import url('./global.css');
+@import url("./reset.css");
+@import url("./global.css");
 
-.main-title{
-    margin: 50px 0;
+.main-title {
+  margin: 50px 0;
+}
+
+.strong{
+    font-weight: 500;
+}
+
+.catalog__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog__item:not(:last-of-type) {
+  margin-bottom: 50px;
+}
+
+.catalog__item-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.catalog__item-btn {
+  align-self: flex-end;
+  margin-bottom: 20px;
 }

@@ -4,4 +4,8 @@ export class Producer{
         this.address = address;
         this.phone = phone;
     }
+
+    getName(){
+        return this.name;
+    }
 }

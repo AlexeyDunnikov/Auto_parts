@@ -29,12 +29,31 @@
       <main class="main">
         <div class="container">
           <h1 class="main-title">Каталог</h1>
+          <div class="catalog"></div>
         </div>
-
-
       </main>
       <footer class="footer"></footer>
     </div>
+
+    <template id="catalog__item-tmp">
+      <div class="catalog__item">
+        <h3 class="catalog__item-title">Запчасть</h3>
+        <p class="catalog__item-articul">
+          Артикул: <span class="catalog__item-articul__value strong"></span>
+        </p>
+        <p class="catalog__item-price">
+          Цена: <span class="catalog__item-price__value strong"></span>
+        </p>
+        <p class="catalog__item-other">
+          Другая информация: <span class="catalog__item-other__value strong"></span>
+        </p>
+        <p class="catalog__item-producer">
+          Поставщик: <span class="catalog__item-producer__value strong"></span>
+        </p>
+        <button class="catalog__item-btn btn">Купить</button>
+        <div class="divider"></div>
+      </div>
+    </template>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="module" src="js/index.js"></script>
