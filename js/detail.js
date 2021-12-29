@@ -15,6 +15,10 @@ export class Detail{
     }
 
     getPrice(){
+        return this.price;
+    }
+
+    getFormatPrice(){
         return new Intl.NumberFormat('ru-RU', {
             style: 'currency',
             currency: 'BYN',

@@ -20,9 +20,9 @@
               <a class="navbar__link--catalog" href="#catalog">Каталог</a>
             </li>
             <li class="tab">
-              <a class="active" href="#add">Добавить поставщика</a>
+              <a class="navbar__link--add active" href="#add">Добавить поставщика</a>
             </li>
-            <li class="tab"><a href="#orders">Покупки</a></li>
+            <li class="tab"><a class="navbar__link--orders" href="#orders">Покупки</a></li>
           </ul>
         </nav>
       </header>
@@ -76,14 +76,19 @@
             </div>
           </div>
         </div>
-        <div id="orders" class="col s12 orders">Test 3</div>
+        <div id="orders" class="col s12 orders">
+          <div class="container">
+            <h1 class="main-title">Покупки</h1>
+            <div class="orders__inner"></div>
+          </div>
+        </div>
       </main>
       <footer class="footer"></footer>
     </div>
 
     <template id="catalog__item-tmp">
       <div class="catalog__item">
-        <h3 class="catalog__item-title">Запчасть</h3>
+        <h3 class="catalog__item-title"></h3>
         <p class="catalog__item-articul">
           Артикул: <span class="catalog__item-articul__value strong"></span>
         </p>
@@ -98,6 +103,34 @@
           Поставщик: <span class="catalog__item-producer__value strong"></span>
         </p>
         <button class="catalog__item-btn btn">Купить</button>
+        <div class="divider"></div>
+      </div>
+    </template>
+
+    <template class="order__item-tmp">
+      <div class="order__item">
+        <h3 class="order__item-title"></h3>
+        <p class="order__item-articul">
+          Артикул: <span class="order__item-articul__value strong"></span>
+        </p>
+        <p class="order__item-price">
+          Цена за единицу: <span class="order__item-price__value strong"></span>
+        </p>
+        <p class="order__item-count">
+          Количество: <span class="order__item-count__value strong"></span>
+        </p>
+        <p class="order__item-total-price">
+          Общая цена:
+          <span class="order__item-total-price__value strong"></span>
+        </p>
+        <p class="order__item-other">
+          Другая информация:
+          <span class="order__item-other__value strong"></span>
+        </p>
+        <p class="order__item-producer">
+          Поставщик: <span class="order__item-producer__value strong"></span>
+        </p>
+        <button class="order__item-btn btn">Удалить</button>
         <div class="divider"></div>
       </div>
     </template>

@@ -33,3 +33,21 @@
   align-self: flex-end;
   margin-bottom: 20px;
 }
+
+.order__item-title{
+    margin-bottom: 20px;
+}
+
+.order__item{
+    display: flex;
+    flex-direction: column;
+}
+
+.order__item:not(:last-of-type){
+    margin-bottom: 50px;
+}
+
+.order__item-btn{
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
