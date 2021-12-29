@@ -1,9 +1,7 @@
-//import { cart } from "./state.js";
-
 export function renderCatalog(state) {
   const itemTmp = document.querySelector("#catalog__item-tmp");
   const catalog = document.querySelector(".catalog");
-  const box = document.createElement('div');
+  const box = document.createElement("div");
 
   state.items.forEach((item) => {
     const producer = item.producer;
@@ -37,12 +35,31 @@ export function renderCatalog(state) {
       itemCloned
         .querySelector(".catalog__item-btn")
         .addEventListener("click", (evt) => {
-          state.cart.push(detail);
+          let find = false;
+          for (let i = 0; i < state.cart.length; i++) {
+            if (
+              state.cart[i].detail.getVendorCode() === detail.getVendorCode()
+            ) {
+              state.cart[i].amount += 1;
+              find = true;
+              break;
+            }
+          }
+
+          if (!find) {
+            const obj = {
+              producer,
+              detail,
+              amount: 1,
+            };
+            state.cart.push(obj);
+          }
         });
 
       box.append(itemCloned);
     });
   });
 
-  catalog.innerHTML = box.innerHTML;
+  catalog.innerHTML = "";
+  catalog.append(box);
 }

@@ -4,6 +4,7 @@ export function renderCart(state){
     const box = document.createElement('div');
 
     state.cart.forEach(item => {
+        const curItem = item;
         const orderClone = orderTmp.content.cloneNode(true);
 
         //name
@@ -33,8 +34,16 @@ export function renderCart(state){
         //producer
         orderClone.querySelector(".order__item-producer__value").textContent = item.producer.getName();
 
+        //delete btn
+        orderClone.querySelector(".order__item-btn").addEventListener('click', (evt) => {
+            console.log(evt.target);
+            curItem.amount -= 1;
+            renderCart(state);
+        });
+
         box.append(orderClone);
     })
 
-    orders.innerHTML = box.innerHTML;
+    orders.innerHTML = '';
+    orders.append(box);
 }
